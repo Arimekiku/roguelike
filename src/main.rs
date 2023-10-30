@@ -1,4 +1,7 @@
+pub mod components;
+
 use bevy::prelude::*;
+use components::*;
 
 fn main() {
     App::new()
@@ -27,15 +30,6 @@ fn update_test(
             position.x += 150. * time.delta_seconds();
         }
 
-        println!("{0:?} position: {1}", name.0, position.x);
+        println!("{0:?} position: {1}", name, position.x);
     }
 }
-
-#[derive(Component)]
-struct Position {
-    x: f32,
-    y: f32,
-}
-
-#[derive(Component, Debug)]
-struct Name(String);
